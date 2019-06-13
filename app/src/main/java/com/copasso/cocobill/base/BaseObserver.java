@@ -2,15 +2,13 @@ package com.copasso.cocobill.base;
 
 import android.accounts.NetworkErrorException;
 import android.content.Context;
-
 import com.copasso.cocobill.model.bean.BaseBean;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 import java.net.ConnectException;
 import java.net.UnknownHostException;
 import java.util.concurrent.TimeoutException;
-
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
 
 /**
  * Created by zhouas666 on 2018/1/19.
@@ -40,6 +38,20 @@ public abstract class BaseObserver<T> implements Observer<T> {
         } catch (Exception e) {
             e.printStackTrace();
         }
+//        BaseBean temp=((BaseBean)t);
+//        if (temp.getStatus()==100) {
+//            try {
+//                onSuccees(t);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        } else {
+//            try {
+//                onCodeError(t);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     @Override

@@ -1,14 +1,7 @@
 package com.copasso.cocobill.utils;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.*;
 import android.graphics.drawable.Drawable;
-
 import com.copasso.cocobill.MyApplication;
 import com.copasso.cocobill.R;
 
@@ -203,12 +196,6 @@ public class ImageUtils {
             drawable = MyApplication.application.getResources().getDrawable(R.mipmap.sort_tianjiade);
         else if(imgUrl.equals("sort_tianjia.png"))
             drawable = MyApplication.application.getResources().getDrawable(R.mipmap.sort_tianjia);
-        else if(imgUrl.equals("card_cash.png"))
-            drawable = MyApplication.application.getResources().getDrawable(R.mipmap.card_cash);
-        else if(imgUrl.equals("card_account.png"))
-            drawable = MyApplication.application.getResources().getDrawable(R.mipmap.card_account);
-        else if(imgUrl.equals("card_account.png"))
-            drawable = MyApplication.application.getResources().getDrawable(R.mipmap.card_account);
         else
             drawable=null;
 

@@ -20,7 +20,6 @@
                 android:layout_height="match_parent"
                 android:paddingRight="10dp"
                 android:src="@mipmap/ic_back"
-                android:onClick="onClick"
                 android:layout_marginLeft="15dp"/>
             <TextView
                 android:id="@+id/mine_frag_tv"
@@ -68,7 +67,7 @@
         android:background="@color/white"
         >
 
-        <androidx.viewpager.widget.ViewPager
+        <android.support.v4.view.ViewPager
             android:id="@+id/viewpager_item"
             android:layout_width="match_parent"
             android:layout_height="180dp"
@@ -125,7 +124,6 @@
             android:paddingLeft="10dp"
             android:layout_centerVertical="true"
             android:src="@mipmap/ic_tb_note_delete"
-            android:onClick="onClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
@@ -213,7 +211,6 @@
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:gravity="center"
-                android:onClick="onClick"
                 android:background="@drawable/bg_radius_click"
                 android:textColor="#000000" />
             <View
@@ -226,7 +223,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:textSize="20sp"
-                android:onClick="onClick"
                 android:background="@drawable/bg_radius_click"
                 android:gravity="center"
                 android:textColor="#000000" />
@@ -240,7 +236,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:textSize="20sp"
-                android:onClick="onClick"
                 android:background="@drawable/bg_radius_click"
                 android:gravity="center"
                 android:textColor="#000000" />
@@ -255,7 +250,6 @@
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:gravity="center"
-                android:onClick="onClick"
                 android:background="@drawable/bg_radius_click"
                 android:textColor="#000000" />
         </LinearLayout>
@@ -282,7 +276,6 @@
                     android:textSize="20sp"
                     android:background="@drawable/bg_radius_click"
                     android:gravity="center"
-                    android:onClick="onClick"
                     android:textColor="#000000" />
                 <View
                     style="@style/vertical_decoration_style"
@@ -296,7 +289,6 @@
                     android:layout_weight="1"
                     android:textSize="20sp"
                     android:gravity="center"
-                    android:onClick="onClick"
                     android:background="@drawable/bg_radius_click"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -317,7 +309,6 @@
                     android:textSize="20sp"
                     android:background="@drawable/bg_radius_click"
                     android:gravity="center"
-                    android:onClick="onClick"
                     android:textColor="#000000" />
                 <View
                     style="@style/vertical_decoration_style"
@@ -331,7 +322,6 @@
                     android:layout_weight="1"
                     android:textSize="20sp"
                     android:gravity="center"
-                    android:onClick="onClick"
                     android:background="@drawable/bg_radius_click"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -352,7 +342,6 @@
                     android:textSize="20sp"
                     android:background="@drawable/bg_radius_click"
                     android:gravity="center"
-                    android:onClick="onClick"
                     android:textColor="#000000" />
                 <View
                     style="@style/vertical_decoration_style"
@@ -366,7 +355,6 @@
                     android:layout_weight="1"
                     android:textSize="20sp"
                     android:gravity="center"
-                    android:onClick="onClick"
                     android:background="@drawable/bg_radius_click"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -386,7 +374,6 @@
                     android:layout_weight="1"
                     android:textSize="20sp"
                     android:gravity="center"
-                    android:onClick="onClick"
                     android:background="@drawable/bg_radius_click"
                     android:textColor="#000000" />
             </LinearLayout>
@@ -407,7 +394,6 @@
             android:layout_height="match_parent">
             <RelativeLayout
                 android:id="@+id/tb_calc_num_del"
-                android:onClick="onClick"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
@@ -426,7 +412,6 @@
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:gravity="center"
-                android:onClick="onClick"
                 android:background="?attr/colorPrimary"
                 android:textColor="@color/white" />
         </LinearLayout>

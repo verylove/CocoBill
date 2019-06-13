@@ -1,8 +1,8 @@
 package com.copasso.cocobill.model.bean.local;
 
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * 账单bean
@@ -12,11 +12,10 @@ public class BBill{
 
     @Id(autoincrement = true)
     private Long id;  //本地id
-
-    private String rid;  //服务器端id
+    private int rid;  //服务器端id
     private float cost;  //金额
     private String content;  //内容
-    private String userid;  //用户id
+    private int userid;  //用户id
     private String payName;  //支付方式
     private String payImg;  //
     private String sortName;  //账单分类
@@ -28,9 +27,9 @@ public class BBill{
     @Generated(hash = 124482664)
     public BBill() {
     }
-    @Generated(hash = 634586034)
-    public BBill(Long id, String rid, float cost, String content, String userid, String payName, String payImg,
-                 String sortName, String sortImg, long crdate, boolean income, int version) {
+    @Generated(hash = 712763217)
+    public BBill(Long id, int rid, float cost, String content, int userid, String payName, String payImg,
+            String sortName, String sortImg, long crdate, boolean income, int version) {
         this.id = id;
         this.rid = rid;
         this.cost = cost;
@@ -52,11 +51,11 @@ public class BBill{
         this.id = id;
     }
 
-    public String getRid() {
+    public int getRid() {
         return rid;
     }
 
-    public void setRid(String rid) {
+    public void setRid(int rid) {
         this.rid = rid;
     }
 
@@ -76,11 +75,11 @@ public class BBill{
         this.content = content;
     }
 
-    public String getUserid() {
+    public int getUserid() {
         return userid;
     }
 
-    public void setUserid(String userid) {
+    public void setUserid(int userid) {
         this.userid = userid;
     }
 

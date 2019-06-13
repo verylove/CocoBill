@@ -2,7 +2,6 @@ package com.copasso.cocobill.utils;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-
 import com.copasso.cocobill.R;
 
 /**

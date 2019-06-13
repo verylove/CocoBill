@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-
 import com.copasso.cocobill.common.Constants;
 
 import java.io.BufferedReader;
@@ -59,7 +58,7 @@ public class HttpUtils {
      * @param imageName
      * @return
      */
-    public static Drawable loadImageFromNetwork(String imageUrl, String imageName)
+    public static Drawable loadImageFromNetwork(String imageUrl,String imageName)
     {
         Drawable drawable = null;
         try {
@@ -83,7 +82,7 @@ public class HttpUtils {
      * @param handler
      */
     public static void getMonthBills(final Handler handler,
-                                     final int userid, final String year, final String month) {
+                                     final int userid,final String year, final String month) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -102,7 +101,7 @@ public class HttpUtils {
      * 删除账单
      * @param handler
      */
-    public static void deleteBillById(final Handler handler, final int billId) {
+    public static void deleteBillById(final Handler handler,final int billId) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -144,7 +143,7 @@ public class HttpUtils {
      *  http://139.199.176.173:8080/ssmBillBook/bill/update?id=118&&userid=1&sortid=8&payid=3&cost=100&crdate=2017-12-20%2023:29:50&content=test&income=true
      * @param handler
      */
-    public static void updateBill(final Handler handler, final int id, final Float cost, final String content,
+    public static void updateBill(final Handler handler, final int id,final Float cost, final String content,
                                   final int userid, final int sortid, final int payid, final String crdate, final boolean income) {
         new Thread(new Runnable() {
             @Override
@@ -171,8 +170,8 @@ public class HttpUtils {
      * @param phone
      * @param mail
      */
-    public static void updateUser(final Handler handler, final int id, final String username, final String gender,
-                                  final String phone, final String mail) {
+    public static void updateUser(final Handler handler, final int id,final String username,final String gender,
+                                  final String phone,final String mail) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -215,7 +214,7 @@ public class HttpUtils {
      * @param userid
      */
     public static void getMonthChart(final Handler handler,
-                                     final int userid, final String year, final String month) {
+                                     final int userid,final String year, final String month) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -237,7 +236,7 @@ public class HttpUtils {
      * @param userid
      */
     public static void getMonthAccount(final Handler handler,
-                                       final int userid, final String year, final String month) {
+                                     final int userid,final String year, final String month) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -259,7 +258,7 @@ public class HttpUtils {
      * @param username
      * @param password
      */
-    public static void userLogin(final Handler handler, final String username, final String password) {
+    public static void userLogin(final Handler handler,final String username, final String password) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -280,7 +279,7 @@ public class HttpUtils {
      * @param username
      * @param password
      */
-    public static void userSign(final Handler handler, final String username, final String password, final String mail) {
+    public static void userSign(final Handler handler,final String username, final String password,final String mail) {
         new Thread(new Runnable() {
             @Override
             public void run() {

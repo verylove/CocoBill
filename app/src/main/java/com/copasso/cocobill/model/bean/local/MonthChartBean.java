@@ -1,6 +1,7 @@
 package com.copasso.cocobill.model.bean.local;
 
 import com.copasso.cocobill.model.bean.BaseBean;
+import com.copasso.cocobill.model.bean.remote.BBillBean;
 
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class MonthChartBean extends BaseBean {
     }
 
     public void setInSortlist(List<SortTypeList> inSortlist) {
-        this.inSortlist = inSortlist;
+        inSortlist = inSortlist;
     }
 
     public static class SortTypeList {

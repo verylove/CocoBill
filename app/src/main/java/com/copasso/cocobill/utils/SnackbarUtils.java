@@ -1,10 +1,11 @@
 package com.copasso.cocobill.utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.view.View;
-
-import com.google.android.material.snackbar.Snackbar;
+import com.copasso.cocobill.R;
 
 /**
  * Created by zhouas666 on 2017/12/28.
