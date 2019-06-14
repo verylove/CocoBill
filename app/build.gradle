@@ -1,25 +1,51 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'android-apt'
 apply plugin: 'org.greenrobot.greendao'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.2'
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId "com.copasso.cocobill"
-        minSdkVersion 14
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
         //兼容Android6.0系统所需
-        useLibrary 'org.apache.http.legacy'
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //useLibrary 'org.apache.http.legacy'
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+
+    useLibrary 'org.apache.http.legacy'
+
+    lintOptions {
+        abortOnError false
+        //忽略警告
+        ignoreWarnings true
+    }
+
+    compileOptions {
+        targetCompatibility = "7"
+        sourceCompatibility = "7"
     }
 }
 
@@ -30,46 +56,52 @@ greendao{
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
+    configurations {
+        //all*.exclude group: 'com.google.code.gson'
+    }
+    //implementaion fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.android.support.constraint:constraint-layout:2.0.0-beta1'
+    api 'androidx.recyclerview:recyclerview:1.0.0-beta01'
+    api 'androidx.appcompat:appcompat:1.0.0-beta01'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
     // Material design 兼容库
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.google.android.material:material:1.0.0-beta01'
     // CardView 支持库
-    implementation 'com.android.support:cardview-v7:28.0.0'
+    api 'androidx.cardview:cardview:1.0.0-beta01'
     // 取色库
-    implementation 'com.android.support:palette-v7:28.0.0'
+    api 'androidx.palette:palette:1.0.0-beta01'
     // 控件注解库
-    implementation 'com.jakewharton:butterknife:10.1.0'
+    api 'com.jakewharton:butterknife:8.2.1'
     // json解析库
-    implementation 'com.google.code.gson:gson:2.8.5'
+    api 'com.google.code.gson:gson:2.8.5'
     // 图片加载库
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    api 'com.github.bumptech.glide:glide:3.7.0'
     // 图表库
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    api 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     // 选择器库
-    implementation 'com.contrarywind:Android-PickerView:3.2.7'
+    api 'com.contrarywind:Android-PickerView:3.2.7'
     // Splash闪屏页库
-    implementation 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
+    api 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
     // RxAndroid+RxJava
-    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.2'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
     // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    api 'com.squareup.retrofit2:retrofit:2.2.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    api 'com.squareup.retrofit2:converter-gson:2.1.0'
     // okhttp
-    implementation 'com.squareup.okhttp3:okhttp:4.0.0-alpha02'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.0-alpha02'
-    // greenDao
-    implementation 'org.greenrobot:greendao:3.2.2'
-    implementation 'org.greenrobot:greendao-generator:3.2.2'
-    // bmob
-    implementation 'cn.bmob.android:bmob-sdk:3.5.5'
 
-    testImplementation 'junit:junit:4.13-beta-3'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    //api 'com.squareup.okhttp3:okhttp:3.12.0'
+    //api 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    // greenDao
+    api 'org.greenrobot:greendao:3.2.2'
+    api 'org.greenrobot:greendao-generator:3.2.2'
+    // bmob
+    api 'cn.bmob.android:bmob-sdk:3.7.1'
+    testImplementation 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+
+
 }
